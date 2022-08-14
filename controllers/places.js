@@ -1,30 +1,31 @@
 const router = require('express').Router()
+const places = require('../models/places.js')
 
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
 router.post('/', (req, res) => {
-  console.log('req.body!!', req.body)
-  res.send('u smacked the post route!')
+  
+  if (!req.body.pic) {
+    // Default image if one is not provided
+    req.body.pic = 'http://placekitten.com/400/400'
+  }
+  if (!req.body.city) {
+    req.body.city = 'Anytown'
+  }
+  if (!req.body.state) {
+    req.body.state = 'USA'
+  }
+  places.push(req.body)
+  res.redirect('/places')
 })
+
 
 
 // GET /places
 router.get('/', (req, res) => {
-    let places = [{
-        name: 'White-Tiger Thai',
-        city: 'Philadelphia',
-        state: 'PA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: './Images/tigerPic.jpg'
-      }, {
-        name: 'Eclipse Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: './Images/eclipsePic.jpg'
-      }]
+   
       
       res.render('index', { places })
     })
