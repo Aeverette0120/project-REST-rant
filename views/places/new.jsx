@@ -7,7 +7,7 @@ function new_form() {
       <main>
         <h1>Add a New Place</h1>
         <link rel="stylesheet" href="/css/style.css"></link>
-        <form method="POST" action="./places">
+        <form method="POST" action="/places">
   <div>
     <label htmlFor="name">Place Name</label>
     <input id="name" name="name" required />

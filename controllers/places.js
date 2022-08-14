@@ -4,6 +4,11 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+router.post('/', (req, res) => {
+  console.log('req.body!!', req.body)
+  res.send('u smacked the post route!')
+})
+
 
 // GET /places
 router.get('/', (req, res) => {
