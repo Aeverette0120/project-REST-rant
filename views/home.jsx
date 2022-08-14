@@ -6,7 +6,7 @@ function home () {
       <Def>
           <main>
               <h1>HOME</h1>
-              <link rel="stylesheet" href="/css/style.css"></link>
+              
               <div>
                 <img className="myPic"src="/Images/burger.jpg" alt="Burger Picture"></img>
               </div>
