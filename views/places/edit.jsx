@@ -6,19 +6,18 @@ function edit_form(data) {
     <Def>
       <main>
         <h1>Edit Place</h1>
-        <form method="POST" action={`/places/${data.place.id}?_method=PUT`}>
+        <form method="POST" action={`/places/${data.index}?_method=PUT`}>
           
             <div>
               <label htmlFor="name">Place Name</label>
-              <input id="name" name="name" required />
+              <input id="name" name="name" defaultValue={data.place.name} required />
             </div>
             <div>
               <label htmlFor="pic">Place Picture</label>
               <input
-                className="form-control "
                 id="name"
                 name="name"
-                defaultValue={data.place.name}
+                
               />
             </div>
             <div>
