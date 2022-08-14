@@ -12,13 +12,13 @@ router.get('/', (req, res) => {
         city: 'Philadelphia',
         state: 'PA',
         cuisines: 'Thai, Pan-Asian',
-        pic: '/Images/tigerPic.jpg'
+        pic: './Images/tigerPic.jpg'
       }, {
-        name: 'Eclipse Coding Cafe',
+        name: 'Eclipse Cafe',
         city: 'Phoenix',
         state: 'AZ',
         cuisines: 'Coffee, Bakery',
-        pic: '/Images/eclipsePic.jpg'
+        pic: './Images/eclipsePic.jpg'
       }]
       
       res.render('index', { places })
