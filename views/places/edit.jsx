@@ -6,11 +6,11 @@ function edit_form(data) {
     <Def>
       <main>
         <h1>Edit Place</h1>
-        <form method="POST" action={`/places/${data.index}?_method=PUT`}>
+        <form method="POST" action={`/places/${data.place.id}?_method=PUT`}>
           
             <div>
               <label htmlFor="name">Place Name</label>
-              <input id="name" name="name" defaultValue={data.place.name} required />
+              <input id="name" name="name" defaultValue={data.place.name}></input>
             </div>
             <div>
               <label htmlFor="pic">Place Picture</label>
@@ -32,7 +32,7 @@ function edit_form(data) {
               <label htmlFor="cuisines">Cuisines</label>
               <input id="cuisines" name="cuisines" required />
             </div>
-            <input type="submit" value="Add Place" />
+            <input type="submit" value="Edit Place" />
           
         </form>
       </main>
