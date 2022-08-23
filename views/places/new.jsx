@@ -6,6 +6,7 @@ function new_form() {
     <Def>
       <main>
         <h1>Add a New Place</h1>
+        
         <link rel="stylesheet" href="/css/style.css"></link>
         <form method="POST" action="/places">
   <div>
@@ -28,13 +29,12 @@ function new_form() {
     <label htmlFor="cuisines">Cuisines</label>
     <input id="cuisines" name="cuisines" required />
   </div>
+  <div className="form-group">
+  <label htmlfor="founded">Founded Year</label>
+  <input type ="number" className="form-control" id="founded" name="founded" value={new Date().getFullYear()} />
+</div>
   <input type="submit" value="Add Place" />
 </form>
-
-<div className="form-group">
-  <label for="founded">Founded Year</label>
-  <input className="form-control" id="founded" name="founded" />
-</div>
 
       </main>
     </Def>
