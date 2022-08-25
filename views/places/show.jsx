@@ -9,6 +9,25 @@ function show(data) {
         {data.message}
       </h4>
     )
+    let Comments = (
+      <h3 className="inactive">
+        No comments yet!
+      </h3>
+    )
+    if (data.place.comments.length) {
+      comments = data.place.comments.map(c => {
+        return (
+          <div className="border">
+            <h2 className="rant">{c.rant ? 'Rant!' : 'Rave!'}</h2>
+            <h4>{c.content}</h4>
+            <h3>
+              <strong>- {c.author}</strong>
+            </h3>
+            <h4>Rating: {c.stars}</h4>
+          </div>
+        )
+      })
+    }
   }
   return (
     <Def>
@@ -43,10 +62,10 @@ function show(data) {
           </button>
         </form>
         </div>
-        <div className="col-sm-6">
-        <h2>Comments below!</h2>
         </div>
-        </div>
+        <hr/>
+        <h2>Comments</h2>
+        {comments}
       </main>
     </Def>
   );
