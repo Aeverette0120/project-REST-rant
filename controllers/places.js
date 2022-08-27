@@ -56,14 +56,17 @@ router.get('/new', (req, res) => {
   })
 
 
-router.delete('/:id', (req, res) => {
-console.log('req.params.id')
-  db.Place.findByIdAndDelete(req.params.id).then(place =>{
-  //res.render('DELETE /places/ :id stub')
-  res.redirect('/places')
+  router.delete('/:id', (req, res) => {
+    db.Place.findByIdAndDelete(req.params.id)
+    .then(place => {
+        res.redirect('/places')
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
 })
 
-})
 
 
  router.get('/:id/edit', (req, res) => {
@@ -96,7 +99,12 @@ router.put('/:id', (req, res) => {
 
 router.post('/:id/comment', (req, res) => {
   console.log(req.body)
-  req.body.rant - req.body.rant ? true : false
+  if (req.body.rant) {
+    req.body.rant = true
+  }
+  else {
+    req.body.rant = false
+  }
   db.Place.findById(req.params.id)
   .then(place => {
       db.Comment.create(req.body)

@@ -25,7 +25,7 @@ function index (data) {
   return (
     <Def>
         <main>
-            <h1>PLACES INDEX PAGE</h1>
+            <h1>PLACES To Rant or Rave About</h1>
             <div className="row">
             {placesFormatted}
             </div>
