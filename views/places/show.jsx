@@ -20,7 +20,7 @@ function show(data) {
     let averageRating = Math.round(sumRatings / data.place.comments.length)
     let stars = ''
     for (let i = 0; i < averageRating; i++) {
-      stars += 'â­ï¸'
+      stars += '⭐'
     }
     rating = (
       <h3>
@@ -103,7 +103,7 @@ function show(data) {
         </div>
         <hr/>
         <h2> Got Your Own Rant or Rave?</h2>
-        <form method="POST" action={`/place/${data.place.id}/comment`}>
+        <form method="POST" action={`/places/${data.place.id}/comment`}>
           <div class="row">
           <div class="form-group col-sm-12">
             <label for="content">Content</label>
